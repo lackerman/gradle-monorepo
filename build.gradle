@@ -1,0 +1,30 @@
+plugins {
+    id 'idea'
+    id 'java'
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+configure(subprojects.findAll()) {
+    apply plugin: 'java'
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    dependencies {
+        testImplementation 'junit:junit:4.13'
+        testImplementation 'org.mockito:mockito-core:3.3.3'
+    }
+}
+
+project(':project_b:service') {
+    dependencies {
+        implementation project(':project_b:library')
+    }
+}

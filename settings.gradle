@@ -1,0 +1,8 @@
+rootProject.name = 'gradle-mono'
+include 'project_a:api'
+include 'project_a:api:service'
+include 'project_a:api:common'
+include 'project_a:api:business'
+include 'project_a:bigdata'
+include 'project_b:service'
+include 'project_b:library'
