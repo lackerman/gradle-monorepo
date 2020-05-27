@@ -19,13 +19,13 @@ subprojects {
     }
 }
 
-project(':project_a:api:business') {
+project(':business') {
     dependencies {
-        implementation project(':project_a:api:common')
+        implementation project(':common')
     }
 }
 
-project(':project_a:api:service') {
+project(':service') {
     apply plugin: 'com.github.johnrengelman.shadow'
 
     shadowJar {
@@ -35,8 +35,8 @@ project(':project_a:api:service') {
     }
 
     dependencies {
-        implementation project(':project_a:api:common')
-        implementation project(':project_a:api:business')
+        implementation project(':common')
+        implementation project(':business')
 
         implementation 'org.apache.httpcomponents:httpclient:4.5.2'
     }
